@@ -1,7 +1,6 @@
 // DONT FORGET TO EXPORT YOUR FILES!!!!!
 // Required packages
 let express = require("express"),
-  path = require("path"),
   htmlRoutes = require("./app/routing/htmlRoutes"),
   apiRoutes = require("./app/routing/apiRoutes");
 

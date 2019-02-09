@@ -11,9 +11,10 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
+
     <title>Friend Finder Survery</title>
   </head>
-  <body>
+  <body class="bg-dark">
     <div class="container">
       <!-- Modal for displaying a found friend -->
       <div id="friendModal" class="modal" tabindex="-1" role="dialog">
@@ -26,8 +27,9 @@
               </button>
             </div>
             <div class="modal-body">
-              <h3 id="friendName"></h3>
-              <img id="friendImg" class="img-responsive" src="" alt="">
+              <h3 id="friendName" class="mx-auto"></h3>
+              <img id="friendImg" class="img-responsive mx-auto" width="60%" src="" alt="">
+              <div id="missedQuestions"></div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -36,14 +38,12 @@
         </div>
       </div>
       <!-- End of modal/Start of form container -->
+      <h1 class="bg-primary text-center py-3 mt-5 mb-0 text-white">Friend Finder Survey</h1>
       <div class="card mx-auto">
         <div class="card-body">
-          <div class="card-title">
-            <h1>Friend Finder Survey</h1>
-          </div>
           <div class="card-text">
             <!-- ================ Start of Form ================== -->
-            <form action="" method="">
+            <form action="survey.html" method="POST">
               <div class="form-group">
                 <input
                   class="form-control"
@@ -55,13 +55,13 @@
                 />
               </div>
               <div class="form-group">
-                <input id="image" type="text" name="image" class="form-control" placeholder="Image URL">
+                <input id="image" type="text" name="image" class="form-control" placeholder="Image URL" required>
               </div>
-              <p class="text-center">Rate each question on a scale from 1 to 5</p>
+              <p class="text-center">Rate each question on a scale from 1 (least) to 5 (Most)</p>
               <!-- Question inputs -->
               <!-- ============= Queston 1 ============ -->
               <div class="mb-5">
-                <p>Question 1</p>
+                <p>1) How much do you like Basketball?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio1">1</label>
                   <input
@@ -70,6 +70,7 @@
                     id="radio1"
                     name="q1"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -115,7 +116,7 @@
               </div>
               <!-- ============= Queston 2 ============ -->
               <div class="mb-5">
-                <p>Question 2</p>
+                <p>2) How much do you like Football?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio6">1</label>
                   <input
@@ -124,6 +125,7 @@
                     id="radio6"
                     name="q2"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -169,7 +171,7 @@
               </div>
               <!-- ============= Queston 3 ============ -->
               <div class="mb-5">
-                <p>Question 3</p>
+                <p>3) How much do you like Baseball?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio11">1</label>
                   <input
@@ -178,6 +180,7 @@
                     id="radio11"
                     name="q3"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -223,7 +226,7 @@
               </div>
               <!-- ============= Queston 4 ============ -->
               <div class="mb-5">
-                <p>Question 4</p>
+                <p>4) How much do you like Hockey?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio16">1</label>
                   <input
@@ -232,6 +235,7 @@
                     id="radio16"
                     name="q4"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -277,7 +281,7 @@
               </div>
               <!-- ============= Queston 5 ============ -->
               <div class="mb-5">
-                <p>Question 5</p>
+                <p>5) How much do you like Soccer?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio21">1</label>
                   <input
@@ -286,6 +290,7 @@
                     id="radio21"
                     name="q5"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -331,7 +336,7 @@
               </div>
               <!-- ============= Queston 6 ============ -->
               <div class="mb-5">
-                <p>Question 6</p>
+                <p>6) How much do you like Weight Training?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio26">1</label>
                   <input
@@ -340,6 +345,7 @@
                     id="radio26"
                     name="q6"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -385,7 +391,7 @@
               </div>
               <!-- ============= Queston 7 ============ -->
               <div class="mb-5">
-                <p>Question 7</p>
+                <p>7) How much do you like Endurance Training?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio31">1</label>
                   <input
@@ -394,6 +400,7 @@
                     id="radio31"
                     name="q7"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -439,7 +446,7 @@
               </div>
               <!-- ============= Queston 8 ============ -->
               <div class="mb-5">
-                <p>Question 8</p>
+                <p>8) How much do you like CrossFit?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio36">1</label>
                   <input
@@ -448,6 +455,7 @@
                     id="radio36"
                     name="q8"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -493,7 +501,7 @@
               </div>
               <!-- ============= Queston 9 ============ -->
               <div class="mb-5">
-                <p>Question 9</p>
+                <p>9) How much do you like Hiking?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio41">1</label>
                   <input
@@ -502,6 +510,7 @@
                     id="radio41"
                     name="q9"
                     value="1"
+                    required
                   />
                 </div>
                 <div class="form-check form-check-inline">
@@ -547,10 +556,10 @@
               </div>
               <!-- ============= Queston 10 ============ -->
               <div class="mb-5">
-                <p>Question 10</p>
+                <p>10) How much do you like Camping?</p>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio46">1</label>
-                  <input class="form-check-input" type="radio" id="radio46 required" name="q10" value="1" />
+                  <input class="form-check-input" type="radio" id="radio46 required" name="q10" value="1" required/>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label mr-2" for="radio47">2</label>
@@ -591,35 +600,46 @@
   ></script>
   <!-- Javascript Logic for handling new friend -->
   <script>
-  $("#surveySubmit").on("click", function () {
-      event.preventDefault();
-      let newFriend = {
-        name: $("#name")
-          .val()
-          .trim(),
-        image: $("#image").val(),
-        answers : [] 
-      };
-      newFriend.answers.push(
-        $("input[name=q1]:checked").val(),
-        $("input[name=q2]:checked").val(),
-        $("input[name=q3]:checked").val(),
-        $("input[name=q3]:checked").val(),
-        $("input[name=q5]:checked").val(),
-        $("input[name=q6]:checked").val(),
-        $("input[name=q7]:checked").val(),
-        $("input[name=q8]:checked").val(),
-        $("input[name=q9]:checked").val(),
-        $("input[name=q10]:checked").val()
+    $("#surveySubmit").on("click", function () {
+        event.preventDefault();
+        let missing = false;
+        let newFriend = {
+          name: $("#name")
+            .val()
+            .trim(),
+          image: $("#image").val(),
+          answers: []
+        };
+        newFriend.answers.push(
+          $("input[name=q1]:checked").val(),
+          $("input[name=q2]:checked").val(),
+          $("input[name=q3]:checked").val(),
+          $("input[name=q3]:checked").val(),
+          $("input[name=q5]:checked").val(),
+          $("input[name=q6]:checked").val(),
+          $("input[name=q7]:checked").val(),
+          $("input[name=q8]:checked").val(),
+          $("input[name=q9]:checked").val(),
+          $("input[name=q10]:checked").val()
         );
-      $.post("/api/friends", newFriend).then(function(data){
-        let foundFriend = data;
-        $("#friendName").html(foundFriend.name);
-        $("#friendImg").attr(`src`, foundFriend.image);
-        $('#friendModal').modal(`show`);
-        console.log(`New Friend Added. \n ${JSON.stringify(foundFriend)}`);
-        
-      }) 
-    });
+        if($(`#name`).val() === "" || $(`#image`).val() === ""){
+          missing = true;
+        }
+        for(let i = 0; i < newFriend.answers.length; i++){
+          if(newFriend.answers[i] === undefined){
+            missing = true
+          }
+        }
+        if(missing){
+          alert("You must fill out all the questions")
+        }else{
+          $.post("/api/friends", newFriend).then(function (data) {
+            let foundFriend = data;
+            $("#friendName").html(foundFriend.name);
+            $("#friendImg").attr(`src`, foundFriend.image);
+            $("#friendModal").modal(`show`);
+          });
+        }
+      });
   </script>
 </html>
