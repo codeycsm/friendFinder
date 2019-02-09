@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Bootstrap CSS cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+
+    <title>Friend Finder Survery</title>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <!-- Modal for displaying a found friend -->
+      <div id="friendModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Your New Friend</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h3 id="friendName" class="mx-auto"></h3>
+              <img id="friendImg" class="img-responsive mx-auto" width="60%" src="" alt="">
+              <div id="missedQuestions"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of modal/Start of form container -->
+      <h1 class="bg-primary text-center py-3 mt-5 mb-0 text-white">Friend Finder Survey</h1>
+      <div class="card mx-auto">
+        <div class="card-body">
+          <div class="card-text">
+            <!-- ================ Start of Form ================== -->
+            <form action="survey.html" method="POST">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input id="image" type="text" name="image" class="form-control" placeholder="Image URL (Can be any image url you want)" required>
+              </div>
+              <p class="text-center">Rate each question on a scale from 1 (least) to 5 (Most)</p>
+              <!-- Question inputs -->
+              <!-- ============= Queston 1 ============ -->
+              <div class="mb-5">
+                <p>1) How much do you like Basketball?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio1">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio1"
+                    name="q1"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio2">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio2"
+                    name="q1"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio3">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio3"
+                    name="q1"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio4">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio4"
+                    name="q1"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio5">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio5"
+                    name="q1"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 2 ============ -->
+              <div class="mb-5">
+                <p>2) How much do you like Football?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio6">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio6"
+                    name="q2"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio7">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio7"
+                    name="q2"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio8">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio8"
+                    name="q2"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio9">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio9"
+                    name="q2"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio10">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio10"
+                    name="q2"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 3 ============ -->
+              <div class="mb-5">
+                <p>3) How much do you like Baseball?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio11">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio11"
+                    name="q3"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio12">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio12"
+                    name="q3"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio13">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio13"
+                    name="q3"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio14">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio14"
+                    name="q3"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio15">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio15"
+                    name="q3"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 4 ============ -->
+              <div class="mb-5">
+                <p>4) How much do you like Hockey?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio16">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio16"
+                    name="q4"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio17">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio17"
+                    name="q4"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio18">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio18"
+                    name="q4"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio19">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio19"
+                    name="q4"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio20">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio20"
+                    name="q4"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 5 ============ -->
+              <div class="mb-5">
+                <p>5) How much do you like Soccer?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio21">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio21"
+                    name="q5"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio22">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio22"
+                    name="q5"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio23">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio23"
+                    name="q5"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio24">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio24"
+                    name="q5"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio25">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio25"
+                    name="q5"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 6 ============ -->
+              <div class="mb-5">
+                <p>6) How much do you like Weight Training?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio26">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio26"
+                    name="q6"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio27">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio27"
+                    name="q6"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio28">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio28"
+                    name="q6"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio29">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio29"
+                    name="q6"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio30">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio30"
+                    name="q6"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 7 ============ -->
+              <div class="mb-5">
+                <p>7) How much do you like Endurance Training?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio31">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio31"
+                    name="q7"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio32">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio32"
+                    name="q7"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio33">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio33"
+                    name="q7"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio34">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio34"
+                    name="q7"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio35">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio35"
+                    name="q7"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 8 ============ -->
+              <div class="mb-5">
+                <p>8) How much do you like CrossFit?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio36">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio36"
+                    name="q8"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio37">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio37"
+                    name="q8"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio38">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio38"
+                    name="q8"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio39">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio39"
+                    name="q8"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio40">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio40"
+                    name="q8"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 9 ============ -->
+              <div class="mb-5">
+                <p>9) How much do you like Hiking?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio41">1</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio41"
+                    name="q9"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio42">2</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio42"
+                    name="q9"
+                    value="2"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio43">3</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio43"
+                    name="q9"
+                    value="3"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio44">4</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio44"
+                    name="q9"
+                    value="4"
+                  />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio45">5</label>
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="radio45"
+                    name="q9"
+                    value="5"
+                  />
+                </div>
+              </div>
+              <!-- ============= Queston 10 ============ -->
+              <div class="mb-5">
+                <p>10) How much do you like Camping?</p>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio46">1</label>
+                  <input class="form-check-input" type="radio" id="radio46 required" name="q10" value="1" required/>
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio47">2</label>
+                  <input class="form-check-input" type="radio" id="radio47" name="q10" value="2" />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio48">3</label>
+                  <input class="form-check-input" type="radio" id="radio48" name="q10" value="3" />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio49">4</label>
+                  <input class="form-check-input" type="radio" id="radio49" name="q10" value="4" />
+                </div>
+                <div class="form-check form-check-inline">
+                  <label class="form-check-label mr-2" for="radio50">5</label>
+                  <input class="form-check-input" type="radio" id="radio50" name="q10" value="5" />
+                </div>
+              </div>
+              <button id="surveySubmit" type="submit" class="btn btn-lg- btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- Bootstrap JS cdn links -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Javascript Logic for handling new friend -->
+  <script>
+    $("#surveySubmit").on("click", function () {
+        event.preventDefault();
+        let missing = false;
+        let newFriend = {
+          name: $("#name")
+            .val()
+            .trim(),
+          image: $("#image").val(),
+          answers: []
+        };
+        newFriend.answers.push(
+          $("input[name=q1]:checked").val(),
+          $("input[name=q2]:checked").val(),
+          $("input[name=q3]:checked").val(),
+          $("input[name=q3]:checked").val(),
+          $("input[name=q5]:checked").val(),
+          $("input[name=q6]:checked").val(),
+          $("input[name=q7]:checked").val(),
+          $("input[name=q8]:checked").val(),
+          $("input[name=q9]:checked").val(),
+          $("input[name=q10]:checked").val()
+        );
+        if($(`#name`).val() === "" || $(`#image`).val() === ""){
+          missing = true;
+        }
+        for(let i = 0; i < newFriend.answers.length; i++){
+          if(newFriend.answers[i] === undefined){
+            missing = true
+          }
+        }
+        if(missing){
+          alert("You must fill out all the questions")
+        }else{
+          $.post("/api/friends", newFriend).then(function (data) {
+            let foundFriend = data;
+            $("#friendName").html(foundFriend.name);
+            $("#friendImg").attr(`src`, foundFriend.image);
+            $("#friendModal").modal(`show`);
+          });
+        }
+      });
+  </script>
+</html>
