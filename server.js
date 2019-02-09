@@ -5,8 +5,7 @@ let express = require("express"),
   apiRoutes = require("./app/routing/apiRoutes");
 
 // Initialize express app and port to listen on.
-let app = express(),
-  PORT = 8000;
+let app = express();
 
 // express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -14,6 +13,6 @@ app.use(express.json());
 app.use(htmlRoutes);
 app.use(apiRoutes);
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || 8080, function() {
   console.log(`Listening on port: ${PORT}`);
 });
