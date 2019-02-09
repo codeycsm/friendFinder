@@ -6,13 +6,11 @@ let express = require("express"),
 
 // Initialize express app and port to listen on.
 let app = express();
-
+let port = process.env.PORT || 80;
 // express body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(htmlRoutes);
 app.use(apiRoutes);
 
-app.listen(process.env.PORT || 8080, function() {
-  console.log(`Listening on port: ${PORT}`);
-});
+app.listen(port || 8080);
