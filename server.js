@@ -13,4 +13,4 @@ app.use(express.json());
 app.use(htmlRoutes);
 app.use(apiRoutes);
 
-app.listen(port || 8080);
+app.listen(port);
