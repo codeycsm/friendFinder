@@ -28,7 +28,6 @@ router.post("/api/friends", function(req, res) {
   }
   res.json(foundFriend);
   friends.push(newFriend);
-  console.log(friends);
 });
 
 module.exports = router;
